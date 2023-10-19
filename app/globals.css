@@ -2,26 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* background-color: #e5e5e5; */
+  background-color: #e9d8a6;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.musicCover {
+  border-radius: 100%;
+}
+
+.spinRecord {
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.playButton {
+  background: none;
+  border: none;
+}
+
+.subTitle {
+  margin-top: -1em;
+  color: #94d2bd;
+}
+
+.time {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  color: #828282;
+  font-size: smaller;
+}
+
+.timeline {
+  width: 80%;
+  background-color: #94d2bd;
+}
+
+input[type="range"] {
+  background-color: #94d2bd;
+}
+
+/* @media (max-width: 900px) {
+  .component {
+    width: 50%;
+  }
+} */
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
